@@ -23,21 +23,16 @@ def ReLu(x):
     return np.maximum(0, x)
 
 
-X = np.array([[1, 2, 3],[4, 5, 6]])
+X = np.array([[1, 2, 3], [4, 5, 6]])
 
-W = np.array([[0,    0,   0.1, 0.2],
-              [0.3, -1,   0.4, 0.5],
-              [1,   0.6,  0.7, 0.8]])
-
+np.random.seed(42)
 capa1 = Capa(entradas=3, neuronas=4, activacion=ReLu, bias=False)
 
-capa1.entrada = X
-capa1.pesos = W 
 resultado = capa1.feed_forward(X)
 
 print("X:")
 print(capa1.entrada)
-print("W:")
+print("W (pesos aleatorios):")
 print(capa1.pesos)
 
 print("\nMultiplicacion N = X @ pesos:")
